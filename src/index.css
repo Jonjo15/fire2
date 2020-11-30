@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.App {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+form span {
+  border-radius: 50%;
+  background-color: white;
+  color: darkgoldenrod;
+}
+form span:hover {
+  cursor: pointer;
+  background-color: darkgoldenrod;
+  color: white;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.image-wrapper img {
+  width: 280px;
+  height: 280px;
+  cursor: pointer;
+}
+.progress-bar {
+  height: 5px;
+  background-color: tomato;
+}
