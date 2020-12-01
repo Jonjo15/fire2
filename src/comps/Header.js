@@ -1,12 +1,12 @@
 import React from 'react'
-
+import {motion} from "framer-motion"
 function Header() {
     return (
-        <div className="title">
+        <motion.div className="title">
             <h1>Firegram</h1>
-            <h2>Your Pictures</h2>
+            <motion.h2 whileHover={{ scale: 1.1 }}>Your Pictures</motion.h2>
             <p>Lorem ipsum......</p>
-        </div>
+        </motion.div>
     )
 }
 

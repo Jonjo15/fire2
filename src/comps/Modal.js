@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {motion} from "framer-motion"
 const Modal = ({imageUrl, setImageUrl}) =>  {
     const handleClick = (e) => {
         if (e.target.classList.contains("modal-wrapper")) {
@@ -7,11 +7,11 @@ const Modal = ({imageUrl, setImageUrl}) =>  {
         }
     }
     return (
-        <div className="backdrop">
-            <div className="modal-wrapper" onClick={handleClick}>
-                <img src={imageUrl} alt="modal"/>
+        <motion.div initial={{opacity: 0}} animate={{opacity:1}} className="backdrop" onClick={handleClick}>
+            <div className="modal-wrapper" >
+                <motion.img initial={{y: "-100vh"}} animate={{y: 0}} src={imageUrl} alt="modal"/>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

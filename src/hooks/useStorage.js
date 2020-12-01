@@ -20,13 +20,12 @@ const useStorage = (image) => {
          function(err) {
             setError(err)
         },
-        function() {
-            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-                let createdAt = timestamp();
-                setUrl(downloadURL)
-                firestoreRef.add({createdAt, url: downloadURL})
-              });
-        })
+        async () => {
+            const url = await storageRef.child(image.name).getDownloadURL();
+            const createdAt = timestamp();
+            await firestoreRef.add({ url, createdAt });
+            setUrl(url);
+          });
     },[image])
 
     return {url, progress, error}
